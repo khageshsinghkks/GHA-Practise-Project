@@ -1,0 +1,8 @@
+name: metadata
+on: issues
+jobs:
+  output:
+    runs_on: ubuntu_latest
+    steps:
+      name: metadata
+      run: echo "toJSON(github)"
