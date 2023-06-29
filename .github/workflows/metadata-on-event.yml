@@ -4,5 +4,5 @@ jobs:
   output:
     runs_on: ubuntu_latest
     steps:
-      name: metadata
-      run: echo "toJSON(github)"
+      - name: metadata
+        run: echo "toJSON(github)"
