@@ -2,7 +2,7 @@ name: metadata
 on: [issues, workflow_dispatch]
 jobs:
   output:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: metadata
         run: echo "toJSON(github)"
