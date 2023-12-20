@@ -1,8 +1,0 @@
-name: metadata
-on: [issues, workflow_dispatch]
-jobs:
-  output:
-    runs-on: ubuntu-latest
-    steps:
-      - name: metadata
-        run: echo "${{ toJSON(github) }}"
