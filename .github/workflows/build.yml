@@ -8,6 +8,11 @@ on:
       - main
     paths:
       - '.github/workflows/*'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/*'
   workflow_dispatch:
 jobs:
   Test-and-deploy:
