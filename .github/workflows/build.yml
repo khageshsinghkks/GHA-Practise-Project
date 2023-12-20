@@ -17,6 +17,8 @@ on:
 jobs:
   Test-and-deploy:
     runs-on: ubuntu-latest
+    outputs:
+      script-file: ${{ steps.get_filename.outputs.script-file }}
     steps:
       - name: Code Checkout
         uses: actions/checkout@v3
@@ -28,6 +30,15 @@ jobs:
         run: npm run test
       - name: build
         run: npm run build
+      - name: Publish JS filename
+        id: get_filename
+        run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: deploy
         run: echo "deploying"
+  Deploy-The-App:
+    runs-on: ubuntu-latest
+    needs: Test-and-deploy
+    steps:
+      - name: echo JS file name
+        run: echo "${{ needs.Test-and-deploy.outputs.script-file }}"
     
