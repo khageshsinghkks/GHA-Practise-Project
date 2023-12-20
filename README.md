@@ -1,1 +1,1 @@
-This is a sample github actions project.
+This is a sample github actions project.   
