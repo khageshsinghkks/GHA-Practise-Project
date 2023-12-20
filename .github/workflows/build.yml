@@ -4,6 +4,10 @@ on:
     types: 
       - opened
       - edited
+    branches: 
+      - main
+    paths-ignore:
+      - '.github/workflows/*'
   workflow_dispatch:
 jobs:
   Test-and-deploy:
